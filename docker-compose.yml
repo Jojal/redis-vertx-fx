@@ -1,0 +1,12 @@
+backend:
+  image: redis
+  restart: always
+
+frontend:
+  build: .
+  links:
+    - backend:redis
+  environment:
+    - DISPLAY=unix$DISPLAY
+  volumes:
+  - /tmp/.X11-unix:/tmp/.X11-unix

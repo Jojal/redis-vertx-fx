@@ -16,7 +16,7 @@ public class Redix {
     static Vertx vertx = Vertx.vertx();
 
     //Config redis
-    static RedisOptions config = new RedisOptions().setHost("127.0.0.1").setPort(6379);
+    static RedisOptions config = new RedisOptions().setHost("0.0.0.0").setPort(6379);
 
     // Pub
     static RedisClient redisPub = RedisClient.create(vertx, config);
@@ -35,6 +35,8 @@ public class Redix {
         redisSub.subscribe("drawchannel", res -> {
             if (res.succeeded()) {
                 System.err.println("Subscribe Ok");
+            } else {
+                System.err.println("Unable to subscribe");
             }
         });
     }
