@@ -2,7 +2,7 @@
 
 ## Installation
 ### Required
-`You must have a running instance of Redis`
+You must have a running instance of Redis.
 
 ### Gradle
 ```bash
